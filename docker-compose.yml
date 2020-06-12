@@ -77,4 +77,18 @@ services:
     restart: unless-stopped
     ports:
       - "5000:5000"
- 
+  
+  collectd-exporter:
+    user: root
+    privileged: true
+    image: prom/collectd-exporter
+    container_name: collectd-exporter
+    #command:
+    #    - web.listen-address=":9103"
+    #    - collectd.listen-address=":25826"
+    #command:
+    #  - --collectd.listen-address=":25826"
+    ports:
+      - "9103:9103"
+      - "25826:25826/udp"
+    restart: always

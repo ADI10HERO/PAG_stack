@@ -1,21 +1,18 @@
+global:
 route:
-
-  group_by: ['job']
+  receiver: "webhook"
+  group_by: ['alertname']
   group_wait: 1s
-  group_interval: 5m
-  repeat_interval: 12h
-  receiver: webhook
-
+  group_interval: 5s
+  repeat_interval: 5s
   routes:
-  - receiver: webhook
-    continue: true
+  - match:
+      severity: critical
 
 receivers:
-
-    - name: webhook
-      webhook_configs:
-      # try to make it dynamic?
-      - url: '10.10.120.202:5000'
-        send_resolved: true
+- name: "webhook"
+  webhook_configs:
+  - url: 'http://10.10.120.202:5000/alerts'
+    send_resolved: true
 
 
