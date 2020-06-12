@@ -1,11 +1,21 @@
 route:
-    receiver: 'slack'
+
+  group_by: ['job']
+  group_wait: 1s
+  group_interval: 5m
+  repeat_interval: 12h
+  receiver: webhook
+
+  routes:
+  - receiver: webhook
+    continue: true
 
 receivers:
-    - name: 'slack'
-      slack_configs:
-          - send_resolved: true
-            text: "{{ .CommonAnnotations.description }}"
-            username: 'Prometheus'
-            channel: '#<channel-name>'
-            api_url: 'https://hooks.slack.com/services/<webhook-id>'
+
+    - name: webhook
+      webhook_configs:
+      # try to make it dynamic?
+      - url: '10.10.120.202:5000'
+        send_resolved: true
+
+
