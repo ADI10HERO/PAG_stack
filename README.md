@@ -29,10 +29,26 @@
 
 **6.** simple-webhook-reciever, this is a very simple http reciever ([written by me](https://hub.docker.com/r/adi10hero/simple-webhook-reciever)) to show the alerts on browser, as mentioned you can set up slack, email, etc but a simple webhook will give your alerts a platform without any external configurations, a good start, isn't it?
 
+## How to run 
+
+```sh
+git clone https://github.com/ADI10HERO/PAG_stack.git
+cd PAG_stack/
+```
+*Use nano / vim / any text editor you like and change the webhook address of  to `ip-of-your-machine:5000/alerts` in `alertmanager/config.yml`*
+
+```sh
+docker-compose up -d  # yeah better to run in the background
+
+docker container ls # check all are up and healthy
+```
+ 
+
+
 ## Next steps
 - [ ] Add basic auth to routes using caddy 
 - [ ] Improving the gui and add features of [simple-webhook-reciever](https://github.com/adi10hero/simple-webhook-reciever/)
-
+- [ ] Automate the webhook address in `alertmanager/config.yml` file
 
 #### Contributing
 - Fork the repository
