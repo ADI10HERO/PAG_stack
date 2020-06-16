@@ -13,6 +13,8 @@
 - Found many repositories with PAG stack deployment docker-compose file, but all used [node-exporter](https://github.com/prometheus/node_exporter).
 - But, if you have collectd intsalled on the system you want to monitor, I couldn't find a pre-made docker-compose file which did that.
 
+*For node-exporter you can checkout the **[master](https://github.com/ADI10HERO/PAG_stack/tree/master)** branch of this repo*
+
 # What will be deployed with this docker-compose?
 
 **1.** Prometheus server scraping itself, cAdvisor and collectd-exporter
