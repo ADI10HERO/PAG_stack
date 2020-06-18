@@ -9,7 +9,7 @@ scrape_configs:
   - job_name: 'collectd-exporter'
     scrape_interval: 5s
     static_configs:
-      - targets: ['collectd-exporter:9103']
+      - targets: ['10.10.120.202:9103']
 
   - job_name: 'cadvisor'
     scrape_interval: 5s

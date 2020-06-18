@@ -12,7 +12,6 @@ route:
 receivers:
 - name: "webhook"
   webhook_configs:
-  - url: 'webhook-url/alerts' #change this with your url
+  - url: 'http://10.10.120.202:5000/alerts' #change this with your url
     send_resolved: true
-
 
