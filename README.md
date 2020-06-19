@@ -8,7 +8,7 @@
 
 * Grafana is a multi-platform open source analytics and interactive visualization web application. It provides charts, graphs, and alerts for the web when connected to supported data sources. It is expandable through a plug-in system. End users can create complex monitoring dashboards using interactive query builders.
 
-## Why this Reposiotry?
+## Why this Repository?
 
 - Found many repositories with PAG stack deployment docker-compose file, but all used [node-exporter](https://github.com/prometheus/node_exporter).
 - But, if you have collectd intsalled on the system you want to monitor, I couldn't find a pre-made docker-compose file which did that.
